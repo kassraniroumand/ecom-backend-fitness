@@ -20,7 +20,7 @@ def build_homepage_content() -> HomepageContent:
         heroSlides=[
             HeroSlide(
                 img="/assets/hero-gym.jpg",
-                eyebrow="یونیکا®",
+                eyebrow=" 222یونیکا®",
                 title="حداکثر عملکرد\nدر کمترین فضا",
                 body="بیش از ۵۰ تمرین در یک دستگاه — تمرین کل بدن تنها در ۱.۵ متر مربع.",
                 cta="کشف یونیکا",
