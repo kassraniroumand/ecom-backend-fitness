@@ -15,13 +15,6 @@ app = FastAPI(
 
 app.include_router(api_router, prefix=settings.API_V1_STR)
 
-templates = Jinja2Templates(directory=Path(__file__).parent / "templates")
-
-
-@app.get("/", response_class=HTMLResponse)
-def read_root(request: Request):
-    return templates.TemplateResponse(request, "index.html")
-
 
 if __name__ == "__main__":
     import uvicorn
