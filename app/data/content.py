@@ -1,0 +1,172 @@
+from app.schemas import (
+    AwardItem,
+    AwardsSection,
+    AwardTab,
+    CategoryGridItem,
+    ElegantProduct,
+    ElegantTab,
+    ElegantlyDesignedSection,
+    FeatureItem,
+    HeroSlide,
+    HomepageContent,
+    LatestProduct,
+    ShopByCategoryItem,
+    Story,
+)
+
+
+def build_homepage_content() -> HomepageContent:
+    return HomepageContent(
+        heroSlides=[
+            HeroSlide(
+                img="/assets/hero-gym.jpg",
+                eyebrow="یونیکا®",
+                title="حداکثر عملکرد\nدر کمترین فضا",
+                body="بیش از ۵۰ تمرین در یک دستگاه — تمرین کل بدن تنها در ۱.۵ متر مربع.",
+                cta="کشف یونیکا",
+                accent="/assets/latest-run-modified.png",
+            ),
+            HeroSlide(
+                img="/assets/treadmill.jpg",
+                eyebrow="ران پرسونال",
+                title="تردمیل،\nبازطراحی شده",
+                body="نمادی از طراحی و عملکرد، طراحی شده تا دویدن در خانه تجربه‌ای بی‌نظیر باشد.",
+                cta="کشف ران",
+                accent="/assets/latest-run-modified.png",
+            ),
+            HeroSlide(
+                img="/assets/bike.jpg",
+                eyebrow="بایک پرسونال",
+                title="با سبک رکاب بزن.",
+                body="کلاس‌های زنده و ضبط‌شده که تجربه استودیو را به خانه شما می‌آورد.",
+                cta="کشف بایک",
+                accent="/assets/latest-run-modified.png",
+            ),
+            HeroSlide(
+                img="/assets/strength.jpg",
+                eyebrow="مجموعه قدرتی",
+                title="قدرت بساز بساز بساز.",
+                body="تجهیزات قدرتی پریمیوم برای نتایج عالی و الهام‌بخش.",
+                cta="کشف قدرت",
+                accent="/assets/latest-run-modified.png",
+            ),
+        ],
+        features=[
+            FeatureItem(
+                title="تمرین در خانه",
+                subtitle="یک باشگاه شخصی، در دسترس شما.",
+                img="/assets/hero-gym.jpg",
+            ),
+            FeatureItem(
+                title="دویدن حرفه‌ای",
+                subtitle="تردمیل‌هایی برای عملکرد بالا.",
+                img="/assets/treadmill.jpg",
+            ),
+            FeatureItem(
+                title="رکاب‌زنی استودیویی",
+                subtitle="با کلاس‌های زنده تمرین کنید.",
+                img="/assets/bike.jpg",
+            ),
+        ],
+        categoryGrid=[
+            CategoryGridItem(index="۰۱", title="دویدن", subtitle="تردمیل‌هایی برای عملکرد بالا.", tag="هوازی", count="۱۲ محصول", img="/assets/treadmill.jpg"),
+            CategoryGridItem(index="۰۲", title="قدرتی", subtitle="فرم‌دهی، مجسمه‌سازی و افزایش قدرت.", tag="قدرت", count="۱۸ محصول", img="/assets/strength.jpg"),
+            CategoryGridItem(index="۰۳", title="دوچرخه", subtitle="دوچرخه‌های ثابت همراه با شما.", tag="استقامت", count="۹ محصول", img="/assets/bike.jpg"),
+            CategoryGridItem(index="۰۴", title="تندرستی", subtitle="تمرین ذهن و بدن در خانه.", tag="ریکاوری", count="۱۴ محصول", img="/assets/wellness.jpg"),
+        ],
+        shopByCategory=[
+            ShopByCategoryItem(title="تردمیل‌ها", count=12, img="/assets/cat-treadmills.jpg"),
+            ShopByCategoryItem(title="دوچرخه‌ها", count=9, img="/assets/cat-bikes.jpg"),
+            ShopByCategoryItem(title="نیمکت‌های وزنه", count=7, img="/assets/cat-benches.jpg"),
+            ShopByCategoryItem(title="مولتی‌جیم", count=5, img="/assets/cat-multigym.jpg"),
+            ShopByCategoryItem(title="اسکی فضایی", count=6, img="/assets/cat-cross.jpg"),
+            ShopByCategoryItem(title="روئینگ", count=4, img="/assets/cat-rowers.jpg"),
+            ShopByCategoryItem(title="وزنه آزاد", count=18, img="/assets/cat-freeweights.jpg"),
+        ],
+        latest=[
+            LatestProduct(
+                badge="جدید",
+                title="بایک استودیو",
+                tagline="رکاب زدن زندگی شما.",
+                price="از ۲,۴۹۰ پوند یا ۶۹.۱۶ پوند/ماه برای ۳۶ ماه با بهره ۴.۹٪",
+                img="/assets/latest-bike.png",
+                category="استقامت",
+            ),
+            LatestProduct(
+                badge="جدید",
+                title="ست دمبل",
+                tagline="قدرت، تصفیه‌شده.",
+                price="از ۵۹۹ پوند یا ۲۴.۹۵ پوند/ماه برای ۲۴ ماه با بهره ۰٪",
+                img="/assets/latest-dumbbells.png",
+                category="قدرتی",
+            ),
+            LatestProduct(
+                badge="جدید",
+                title="ردیاب مای‌ران",
+                tagline="تمرین هوشمندانه‌تر.",
+                price="از ۳۴۹ پوند یا ۸۷.۲۵ پوند/ماه برای ۴ ماه با بهره ۰٪",
+                img="/assets/latest-watch.png",
+                category="پوشیدنی",
+            ),
+            LatestProduct(
+                badge="جدید",
+                title="کیت ریکاوری",
+                tagline="بازیابی. تجدید. بازسازی.",
+                price="از ۱۴۹ پوند یا ۳۷.۲۵ پوند/ماه برای ۴ ماه با بهره ۰٪",
+                img="/assets/latest-recovery.png",
+                category="ریکاوری",
+            ),
+        ],
+        elegantlyDesigned=ElegantlyDesignedSection(
+            products=[
+                ElegantProduct(name="تکنوجیم ریفورم", price="۷,۹۵۰ پوند", img="/assets/prod-reform.jpg", category="wellness"),
+                ElegantProduct(name="تکنوجیم مای‌ران", price="از ۳,۶۵۰ پوند", img="/assets/prod-treadmill.jpg", category="cardio"),
+                ElegantProduct(name="تکنوجیم بنچ", price="از ۱,۸۵۰ پوند", img="/assets/prod-bench.jpg", category="strength"),
+                ElegantProduct(name="تکنوجیم بایک", price="۳,۹۶۰ پوند", img="/assets/prod-bike.jpg", category="cardio"),
+                ElegantProduct(name="تکنوجیم کامپکت", price="۲,۶۷۰ پوند", img="/assets/prod-strength.jpg", category="strength"),
+                ElegantProduct(name="تکنوجیم اسکیل‌رو", price="از ۴,۲۹۰ پوند", img="/assets/prod-rower.jpg", category="cardio"),
+            ],
+            tabs=[
+                ElegantTab(id="all", label="همه", icon="home"),
+                ElegantTab(id="cardio", label="هوازی", icon="zap"),
+                ElegantTab(id="strength", label="قدرتی", icon="dumbbell"),
+                ElegantTab(id="wellness", label="تندرستی", icon="flame"),
+            ],
+        ),
+        awards=AwardsSection(
+            catalogue={
+                "treadmills": [
+                    AwardItem(category="تردمیل", name="ران پرسونال", img="/assets/award-treadmill1.jpg"),
+                    AwardItem(category="تردمیل", name="تکنوجیم ران", img="/assets/award-treadmill2.jpg"),
+                    AwardItem(category="تردمیل", name="آرتیس ران", img="/assets/award-treadmill3.jpg"),
+                    AwardItem(category="تردمیل", name="مای‌ران کامپکت", img="/assets/award-treadmill1.jpg"),
+                    AwardItem(category="تردمیل", name="اکسایت لایو", img="/assets/award-treadmill2.jpg"),
+                ],
+                "bikes": [
+                    AwardItem(category="دوچرخه", name="تکنوجیم راید", img="/assets/award-bike1.jpg"),
+                    AwardItem(category="دوچرخه", name="ریکلاین پرسونال", img="/assets/award-bike2.jpg"),
+                    AwardItem(category="دوچرخه", name="بایک استودیو", img="/assets/award-bike1.jpg"),
+                    AwardItem(category="دوچرخه", name="گروپ سایکل کانکت", img="/assets/award-bike2.jpg"),
+                ],
+                "strength": [
+                    AwardItem(category="قدرتی", name="کینزیس پرسونال", img="/assets/award-strength1.jpg"),
+                    AwardItem(category="قدرتی", name="بنچ پیور", img="/assets/award-strength2.jpg"),
+                    AwardItem(category="قدرتی", name="پاور پرسونال", img="/assets/award-strength1.jpg"),
+                    AwardItem(category="قدرتی", name="المنت+ بنچ", img="/assets/award-strength2.jpg"),
+                ],
+            },
+            tabs=[
+                AwardTab(id="treadmills", label="تردمیل"),
+                AwardTab(id="bikes", label="دوچرخه"),
+                AwardTab(id="strength", label="قدرتی"),
+            ],
+            defaultTab="treadmills",
+        ),
+        stories=[
+            Story(tag="طراحی", title="تندرستی به‌عنوان لوکس‌گرایی نوین در طراحی خانه", img="/assets/treadmill.jpg"),
+            Story(tag="عملکرد", title="ورزشکاران نخبه چگونه برای المپیک تمرین می‌کنند", img="/assets/strength.jpg"),
+            Story(tag="تندرستی", title="علم پشت ریکاوری فعال", img="/assets/wellness.jpg"),
+            Story(tag="دوچرخه", title="دوچرخه‌سواری داخل خانه: تجربه استودیویی در منزل", img="/assets/bike.jpg"),
+            Story(tag="نوآوری", title="درون آزمایشگاه طراحی هوشمندترین باشگاه جهان", img="/assets/hero-gym.jpg"),
+        ],
+    )
