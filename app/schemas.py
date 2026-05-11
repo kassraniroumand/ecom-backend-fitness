@@ -1,6 +1,6 @@
-from typing import Literal
+from typing import Any, Literal
 
-from pydantic import BaseModel, Field
+from pydantic import BaseModel, ConfigDict, Field
 
 
 class HeroSlide(BaseModel):
@@ -140,3 +140,25 @@ class ProductDetail(BaseModel):
     product: CategoryProduct
     category: Category
     related: list[CategoryProduct]
+
+
+class PageBase(BaseModel):
+    title: str = Field(..., min_length=1, max_length=255)
+    content: dict[str, Any] = Field(default_factory=dict)
+    seo: dict[str, Any] = Field(default_factory=dict)
+
+
+class PageCreate(PageBase):
+    pass
+
+
+class PageUpdate(BaseModel):
+    title: str | None = Field(default=None, min_length=1, max_length=255)
+    content: dict[str, Any] | None = None
+    seo: dict[str, Any] | None = None
+
+
+class PageRead(PageBase):
+    id: int
+
+    model_config = ConfigDict(from_attributes=True)

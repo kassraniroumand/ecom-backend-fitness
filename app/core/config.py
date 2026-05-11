@@ -3,6 +3,7 @@ from pydantic_settings import BaseSettings, SettingsConfigDict
 
 class Settings(BaseSettings):
     model_config = SettingsConfigDict(
+        env_file=".env",
         env_ignore_empty=True,
         extra="ignore",
     )
@@ -13,7 +14,11 @@ class Settings(BaseSettings):
     BACKEND_CORS_ORIGINS: list[str] = [
         "http://localhost:3000",
         "http://127.0.0.1:3000",
+        "http://localhost:3001",
+        "http://127.0.0.1:3001",
     ]
 
+    DATABASE_URL: str
 
-settings = Settings()
+
+settings = Settings()  # type: ignore[call-arg]
